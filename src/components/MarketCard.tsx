@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Sparkline } from '@/utils/sparkline';
 
 interface MarketData {
   commodity: string;
@@ -10,6 +11,7 @@ interface MarketData {
   "7d_ma": number;
   signal: "BUY" | "SELL" | "HOLD";
   analysis: string;
+  price_history?: Array<{ price: number; date: string }>;
 }
 
 interface MarketCardProps {
@@ -95,6 +97,25 @@ export const MarketCard = ({ commodity, mandi }: MarketCardProps) => {
             </div>
           </div>
         </div>
+        
+        {/* Price Trend Sparkline */}
+        {market.price_history && market.price_history.length > 1 && (
+          <div className="space-y-2">
+            <div className="text-xs text-muted-foreground">7-day trend</div>
+            <div className="flex items-center justify-between">
+              <Sparkline
+                data={market.price_history.map(p => p.price)}
+                width={120}
+                height={30}
+                color={market.signal === 'SELL' ? '#ef4444' : market.signal === 'BUY' ? '#22c55e' : '#6b7280'}
+                className="flex-1"
+              />
+              <div className="text-xs text-muted-foreground ml-2">
+                {market.price_history[0]?.date && new Date(market.price_history[0].date).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}
+              </div>
+            </div>
+          </div>
+        )}
         
         <div className="bg-green-100 rounded-lg p-3">
           <p className="text-xs text-green-700">{market.analysis}</p>

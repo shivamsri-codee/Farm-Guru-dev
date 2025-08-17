@@ -5,6 +5,8 @@ import { Card } from '@/components/ui/card';
 import { useTranslation } from 'react-i18next';
 import { Mic, MicOff, Camera, Send, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/lib/supabaseClient';
+import { openDB } from 'idb';
 
 interface QueryInputProps {
   onQuery: (text: string, imageFile?: File) => void;
@@ -12,12 +14,13 @@ interface QueryInputProps {
 }
 
 export const QueryInput = ({ onQuery, isLoading }: QueryInputProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { toast } = useToast();
   const [text, setText] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
 
   const startRecording = () => {
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
@@ -97,14 +100,100 @@ export const QueryInput = ({ onQuery, isLoading }: QueryInputProps) => {
         return;
       }
 
+      uploadImageToSupabase(file);
+    }
+  };
+
+  const uploadImageToSupabase = async (file: File) => {
+    setUploadingImage(true);
+    try {
+      const fileName = `${Date.now()}-${file.name}`;
+      const filePath = `uploads/${fileName}`;
+
+      const { data, error } = await supabase.storage
+        .from('farm-images')
+        .upload(filePath, file);
+
+      if (error) throw error;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('farm-images')
+        .getPublicUrl(data.path);
+
       setText(t('image.analyzing'));
-      onQuery(t('image.analyzing'), file);
+      await handleRealQuery(t('image.analyzing'), publicUrl);
+    } catch (error) {
+      console.error('Image upload error:', error);
+      toast({
+        title: t('image.error'),
+        description: 'Failed to upload image. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
+  const handleRealQuery = async (queryText: string, imageId?: string) => {
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${apiUrl}/api/query`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: 'anonymous', // TODO: Get from auth context
+          text: queryText,
+          lang: i18n.language,
+          image_id: imageId
+        })
+      });
+
+      if (!response.ok) throw new Error('Query failed');
+      
+      const result = await response.json();
+      
+      // Log to IndexedDB for offline access
+      await logQueryToIndexedDB(queryText, result);
+      
+      // Check for fallback response
+      if (result.answer === "I don't know — please consult a local expert.") {
+        // Show special help card
+        onQuery(queryText, undefined, { showHelpCard: true, result });
+      } else {
+        onQuery(queryText, undefined, { result });
+      }
+    } catch (error) {
+      console.error('Query error:', error);
+      // Fallback to mock response
+      onQuery(queryText, imageId ? new File([], 'image') : undefined);
+    }
+  };
+
+  const logQueryToIndexedDB = async (query: string, response: any) => {
+    try {
+      const db = await openDB('FarmGuruQueries', 1, {
+        upgrade(db) {
+          if (!db.objectStoreNames.contains('queries')) {
+            const store = db.createObjectStore('queries', { keyPath: 'id', autoIncrement: true });
+            store.createIndex('timestamp', 'timestamp');
+          }
+        },
+      });
+
+      await db.add('queries', {
+        query,
+        response,
+        timestamp: new Date().toISOString(),
+        lang: i18n.language
+      });
+    } catch (error) {
+      console.error('IndexedDB logging error:', error);
     }
   };
 
   const handleSubmit = () => {
-    if (text.trim() && !isLoading) {
-      onQuery(text.trim());
+    if (text.trim() && !isLoading && !uploadingImage) {
+      handleRealQuery(text.trim());
     }
   };
 
@@ -153,10 +242,14 @@ export const QueryInput = ({ onQuery, isLoading }: QueryInputProps) => {
               variant="outline"
               size="lg"
               onClick={() => fileInputRef.current?.click()}
-              disabled={isLoading}
+              disabled={isLoading || uploadingImage}
               className="hover:border-accent hover:text-accent transition-smooth"
             >
-              <Camera className="h-5 w-5" />
+              {uploadingImage ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Camera className="w-5 h-5" />
+              )}
               <span className="sr-only">{t('image.upload')}</span>
             </Button>
 
@@ -173,17 +266,17 @@ export const QueryInput = ({ onQuery, isLoading }: QueryInputProps) => {
           {/* Submit Button */}
           <Button
             onClick={handleSubmit}
-            disabled={!text.trim() || isLoading}
+            disabled={!text.trim() || isLoading || uploadingImage}
             size="lg"
             className="bg-gradient-forest hover:shadow-glow transition-spring px-8"
           >
-            {isLoading ? (
+            {isLoading || uploadingImage ? (
               <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
               <Send className="h-5 w-5" />
             )}
             <span className="ml-2 font-medium">
-              {isLoading ? t('input.analyzing') : t('input.ask')}
+              {isLoading || uploadingImage ? t('input.analyzing') : t('input.ask')}
             </span>
           </Button>
         </div>
