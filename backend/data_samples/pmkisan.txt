@@ -1,0 +1,27 @@
+PM-KISAN Scheme
+
+The Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) is a Central Sector Scheme that provides income support to landholding farmers' families across the country. Under this scheme, financial benefit of Rs.6000/- per year is provided to eligible beneficiary farmers' families in three equal installments of Rs.2000/- each every four months.
+
+Eligibility:
+- Small and marginal farmers with combined landholding/ownership of upto 2 hectares
+- The benefit will be provided to families defined as husband, wife and minor children
+- Farmers who are income tax payees are excluded
+- Farmers holding constitutional posts, government employees, pensioners are excluded
+
+Required Documents:
+- Aadhaar card
+- Bank account details
+- Land ownership documents (revenue records)
+- Mobile number for SMS alerts
+
+Application Process:
+Farmers can apply online through pmkisan.gov.in portal or visit nearest Common Service Centre (CSC). The scheme is implemented through State/UT Governments and Union Territory Administrations.
+
+Benefits:
+- Direct cash transfer of Rs.6000 per year
+- Three installments of Rs.2000 each
+- Money transferred directly to bank account
+- No intermediaries involved
+
+Contact:
+For queries, farmers can contact PM-KISAN helpline at 155261 or visit district agriculture office.

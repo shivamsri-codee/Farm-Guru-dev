@@ -1,0 +1,40 @@
+Irrigation Management for Indian Agriculture
+
+Proper irrigation management is crucial for crop productivity and water conservation. Here are key guidelines for different crops and seasons:
+
+Winter Crops (Rabi):
+- Wheat: Requires 4-6 irrigations during growth cycle. Critical stages are crown root initiation (20-25 days), tillering (40-45 days), jointing (60-65 days), flowering (85-90 days), and grain filling (105-110 days)
+- Mustard: Needs 2-3 irrigations - first at 30-35 days, second at flowering, third at pod filling
+- Chickpea: Generally requires 1-2 irrigations - one at pre-flowering and another at pod filling stage
+
+Summer Crops:
+- Rice: Keep 2-5 cm standing water during vegetative stage, intermittent irrigation during reproductive stage
+- Sugarcane: Requires frequent irrigation every 7-10 days during active growth period
+
+Irrigation Scheduling:
+- Check soil moisture at 2-3 inch depth before watering
+- Early morning (6-8 AM) is the best time for irrigation
+- Avoid irrigation during hot afternoon (12-3 PM)
+- Consider weather forecast before irrigation
+
+Water-Saving Techniques:
+- Drip irrigation can save 30-50% water
+- Mulching reduces evaporation by 50-70%
+- Furrow irrigation is suitable for row crops
+- Sprinkler irrigation for uniform water distribution
+
+Soil Moisture Assessment:
+- Sandy soils: Water when top 6 inches become dry
+- Clay soils: Water when top 4 inches become dry
+- Loamy soils: Water when top 5 inches become dry
+
+Signs of Water Stress:
+- Wilting during cooler parts of day
+- Yellowing of older leaves
+- Reduced growth rate
+- Early maturity
+
+Monsoon Considerations:
+- Reduce irrigation frequency during rainy season
+- Ensure proper drainage to prevent waterlogging
+- Monitor for fungal diseases in high humidity

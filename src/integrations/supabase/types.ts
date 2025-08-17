@@ -14,13 +14,364 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      community_posts: {
+        Row: {
+          body: string
+          created_at: string | null
+          id: string
+          moderated: boolean | null
+          tags: string[] | null
+          title: string
+          user_id: string | null
+        }
+        Insert: {
+          body: string
+          created_at?: string | null
+          id?: string
+          moderated?: boolean | null
+          tags?: string[] | null
+          title: string
+          user_id?: string | null
+        }
+        Update: {
+          body?: string
+          created_at?: string | null
+          id?: string
+          moderated?: boolean | null
+          tags?: string[] | null
+          title?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_posts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      docs: {
+        Row: {
+          content: string
+          created_at: string | null
+          embedding: string | null
+          id: string
+          source_url: string | null
+          title: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          embedding?: string | null
+          id?: string
+          source_url?: string | null
+          title: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          embedding?: string | null
+          id?: string
+          source_url?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      images: {
+        Row: {
+          confidence: number | null
+          created_at: string | null
+          filename: string
+          id: string
+          label: string | null
+          storage_path: string | null
+          user_id: string | null
+        }
+        Insert: {
+          confidence?: number | null
+          created_at?: string | null
+          filename: string
+          id?: string
+          label?: string | null
+          storage_path?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          confidence?: number | null
+          created_at?: string | null
+          filename?: string
+          id?: string
+          label?: string | null
+          storage_path?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "images_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      market_prices: {
+        Row: {
+          commodity: string
+          created_at: string | null
+          date: string
+          id: string
+          mandi: string
+          modal_price: number
+        }
+        Insert: {
+          commodity: string
+          created_at?: string | null
+          date: string
+          id?: string
+          mandi: string
+          modal_price: number
+        }
+        Update: {
+          commodity?: string
+          created_at?: string | null
+          date?: string
+          id?: string
+          mandi?: string
+          modal_price?: number
+        }
+        Relationships: []
+      }
+      queries: {
+        Row: {
+          agent: string | null
+          confidence: number | null
+          created_at: string | null
+          flagged: boolean | null
+          id: string
+          question: string
+          response: Json | null
+          user_id: string | null
+        }
+        Insert: {
+          agent?: string | null
+          confidence?: number | null
+          created_at?: string | null
+          flagged?: boolean | null
+          id?: string
+          question: string
+          response?: Json | null
+          user_id?: string | null
+        }
+        Update: {
+          agent?: string | null
+          confidence?: number | null
+          created_at?: string | null
+          flagged?: boolean | null
+          id?: string
+          question?: string
+          response?: Json | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "queries_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schemes: {
+        Row: {
+          applicable_crops: string[] | null
+          applicable_states: string[] | null
+          code: string
+          created_at: string | null
+          description: string | null
+          id: string
+          name: string
+          url: string | null
+        }
+        Insert: {
+          applicable_crops?: string[] | null
+          applicable_states?: string[] | null
+          code: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name: string
+          url?: string | null
+        }
+        Update: {
+          applicable_crops?: string[] | null
+          applicable_states?: string[] | null
+          code?: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name?: string
+          url?: string | null
+        }
+        Relationships: []
+      }
+      users: {
+        Row: {
+          created_at: string | null
+          crops: Json | null
+          id: string
+          name: string | null
+          phone: string | null
+          state: string | null
+          village: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          crops?: Json | null
+          id?: string
+          name?: string | null
+          phone?: string | null
+          state?: string | null
+          village?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          crops?: Json | null
+          id?: string
+          name?: string | null
+          phone?: string | null
+          state?: string | null
+          village?: string | null
+        }
+        Relationships: []
+      }
+      weather: {
+        Row: {
+          created_at: string | null
+          district: string
+          forecast_date: string
+          id: string
+          json_payload: Json
+          state: string
+        }
+        Insert: {
+          created_at?: string | null
+          district: string
+          forecast_date: string
+          id?: string
+          json_payload: Json
+          state: string
+        }
+        Update: {
+          created_at?: string | null
+          district?: string
+          forecast_date?: string
+          id?: string
+          json_payload?: Json
+          state?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      binary_quantize: {
+        Args: { "": string } | { "": unknown }
+        Returns: unknown
+      }
+      halfvec_avg: {
+        Args: { "": number[] }
+        Returns: unknown
+      }
+      halfvec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      halfvec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      halfvec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      hnsw_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_sparsevec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnswhandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflathandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      l2_norm: {
+        Args: { "": unknown } | { "": unknown }
+        Returns: number
+      }
+      l2_normalize: {
+        Args: { "": string } | { "": unknown } | { "": unknown }
+        Returns: string
+      }
+      sparsevec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      sparsevec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      sparsevec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      vector_avg: {
+        Args: { "": number[] }
+        Returns: string
+      }
+      vector_dims: {
+        Args: { "": string } | { "": unknown }
+        Returns: number
+      }
+      vector_norm: {
+        Args: { "": string }
+        Returns: number
+      }
+      vector_out: {
+        Args: { "": string }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: { "": string }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

@@ -1,0 +1,62 @@
+Integrated Pest Management (IPM) for Indian Agriculture
+
+IPM is an ecosystem-based strategy that focuses on long-term prevention of pests through a combination of techniques such as biological control, habitat manipulation, modification of cultural practices, and use of resistant varieties.
+
+Core Principles:
+1. Prevention is better than cure
+2. Regular monitoring and identification
+3. Use of multiple control methods
+4. Judicious use of pesticides only when necessary
+
+Cultural Control Methods:
+- Crop rotation to break pest cycles
+- Timely sowing and harvesting
+- Proper field sanitation
+- Use of resistant/tolerant varieties
+- Balanced fertilization (avoid excess nitrogen)
+
+Biological Control:
+- Encourage natural enemies like predators and parasites
+- Use of bio-pesticides (Bt, NPV, Trichoderma)
+- Release of beneficial insects when available
+- Conservation of natural habitat for beneficial organisms
+
+Mechanical Control:
+- Hand picking of large insects and egg masses
+- Use of pheromone traps for monitoring
+- Light traps for nocturnal pests
+- Sticky traps for flying insects
+- Physical barriers like nets
+
+Common Pests and Management:
+
+Aphids:
+- Symptoms: Yellowing, curling leaves, honeydew secretion
+- Control: Spray neem oil, encourage ladybirds, use yellow sticky traps
+- Avoid excess nitrogen fertilization
+
+Caterpillars:
+- Symptoms: Holes in leaves, visible larvae
+- Control: Hand picking, Bt spray, pheromone traps
+- Monitor regularly during egg laying period
+
+Sucking Pests (Thrips, Whitefly):
+- Symptoms: Silver/bronze patches on leaves, stunted growth
+- Control: Blue/yellow sticky traps, neem oil, conserve natural enemies
+- Maintain field hygiene
+
+Chemical Control Guidelines:
+- Use only when pest population exceeds economic threshold
+- Rotate different groups of pesticides to prevent resistance
+- Follow recommended dosage and safety intervals
+- Always read label instructions carefully
+- Use protective equipment during application
+- Avoid spraying during flowering for bee safety
+
+Never apply pesticides without:
+- Proper pest identification
+- Consultation with local agricultural extension officer
+- Understanding of pre-harvest interval
+- Appropriate safety measures
+
+For specific pest problems, contact your nearest Krishi Vigyan Kendra (KVK) for expert guidance and local pest monitoring data.

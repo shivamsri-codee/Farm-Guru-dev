@@ -1,0 +1,36 @@
+Pradhan Mantri Fasal Bima Yojana (PMFBY)
+
+PMFBY is a crop insurance scheme that aims to provide insurance coverage and financial support to farmers in the event of failure of any of the notified crop as a result of natural calamities, pests & diseases.
+
+Key Features:
+- Uniform premium across the country: Kharif 2%, Rabi 1.5%, Commercial/Horticultural crops 5%
+- Premium rates to be capped and balance will be shared equally by Centre and State
+- No upper limit on Government subsidy
+- Use of technology for quick settlement of claims
+
+Coverage:
+- All food crops (cereals, millets and pulses)
+- Oilseeds and annual commercial/horticultural crops
+- Coverage available from sowing to post-harvest including losses due to prevented sowing
+
+Risk Coverage:
+- Yield losses due to non-preventable natural risks
+- Post-harvest losses due to cyclones and unseasonal rains
+- Prevented sowing/planting risk due to deficit rainfall
+- Mid-season adversity for longer duration crops
+- Localized calamities like hailstorm, landslide, inundation
+
+Claim Settlement:
+- Yield data will be captured for each notified crop in the notified area through requisite number of Crop Cutting Experiments (CCEs)
+- Technology solutions like smartphones, GPS, remote sensing will be used to reduce the delays
+- Claims to be settled within 2 months of harvest
+
+Premium Rates:
+- Kharif: Maximum 2% of Sum Insured by farmers
+- Rabi: Maximum 1.5% of Sum Insured by farmers  
+- Annual Commercial and Horticultural crops: Maximum 5% of Sum Insured by farmers
+
+Exclusions:
+- War, nuclear risks, malicious acts
+- Losses arising out of negligence or any act of omission
+- Theft, animals, birds attack unless specifically covered

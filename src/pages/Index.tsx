@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { QueryInput } from '@/components/QueryInput';
 import { ResultCard } from '@/components/ResultCard';
 import { LanguageToggle } from '@/components/LanguageToggle';
+import { WeatherCard } from '@/components/WeatherCard';
+import { MarketCard } from '@/components/MarketCard';
 import { useTranslation } from 'react-i18next';
 import { Sprout, Wheat, Leaf, Sun } from 'lucide-react';
 
@@ -140,6 +142,12 @@ const Index = () => {
           {result && (
             <div className="space-y-6">
               <ResultCard result={result} />
+              
+              {/* Additional cards for context */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <WeatherCard state="Karnataka" district="Bangalore" />
+                <MarketCard commodity="tomato" mandi="Bangalore" />
+              </div>
             </div>
           )}
 

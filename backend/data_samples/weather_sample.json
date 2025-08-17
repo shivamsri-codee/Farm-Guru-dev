@@ -1,0 +1,24 @@
+{
+  "bangalore": {
+    "location": "Bangalore, Karnataka",
+    "temperature": {"min": 18, "max": 28},
+    "humidity": 65,
+    "rainfall_probability": 30,
+    "wind_speed": 8,
+    "conditions": "Partly cloudy",
+    "forecast_days": [
+      {"date": "2025-01-17", "temp_min": 17, "temp_max": 27, "rain_prob": 20},
+      {"date": "2025-01-18", "temp_min": 19, "temp_max": 29, "rain_prob": 40},
+      {"date": "2025-01-19", "temp_min": 18, "temp_max": 26, "rain_prob": 60},
+      {"date": "2025-01-20", "temp_min": 16, "temp_max": 25, "rain_prob": 80}
+    ]
+  },
+  "mysore": {
+    "location": "Mysore, Karnataka", 
+    "temperature": {"min": 16, "max": 26},
+    "humidity": 70,
+    "rainfall_probability": 45,
+    "wind_speed": 6,
+    "conditions": "Cloudy"
+  }
+}

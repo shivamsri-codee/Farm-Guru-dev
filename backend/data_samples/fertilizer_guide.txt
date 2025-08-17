@@ -1,0 +1,82 @@
+Fertilizer Management and Soil Health
+
+Balanced fertilizer application is essential for sustainable crop production. Soil testing is the foundation of good fertilizer management.
+
+Soil Testing Importance:
+- Determines nutrient status of soil
+- Helps in calculating fertilizer requirements
+- Prevents over-fertilization and nutrient imbalance
+- Saves money and protects environment
+
+Primary Nutrients (NPK):
+
+Nitrogen (N):
+- Functions: Promotes vegetative growth, chlorophyll formation
+- Deficiency symptoms: Yellowing of older leaves, stunted growth
+- Sources: Urea, ammonium sulfate, calcium ammonium nitrate
+- Application: Split application during crop growth
+
+Phosphorus (P):
+- Functions: Root development, flowering, fruit formation
+- Deficiency symptoms: Purple/red coloration, delayed maturity
+- Sources: Single super phosphate, diammonium phosphate
+- Application: Apply at planting time
+
+Potassium (K):
+- Functions: Disease resistance, water regulation, quality improvement
+- Deficiency symptoms: Yellowing/browning of leaf margins
+- Sources: Muriate of potash, sulfate of potash
+- Application: Split application with nitrogen
+
+Secondary Nutrients:
+- Calcium: Cell wall formation, reduces soil acidity
+- Magnesium: Chlorophyll component, enzyme activation
+- Sulfur: Protein synthesis, oil formation
+
+Micronutrients:
+- Iron, Zinc, Manganese, Boron, Copper, Molybdenum
+- Required in small quantities but equally important
+- Deficiency often occurs in alkaline soils
+
+General Fertilizer Recommendations:
+
+Rice:
+- N:P:K ratio 4:2:1
+- Apply 25% N as basal, 50% at tillering, 25% at panicle initiation
+- Zinc application recommended in deficient soils
+
+Wheat:
+- N:P:K ratio 4:2:1
+- Apply full P and K at sowing, N in 2-3 splits
+- First irrigation critical for nutrient uptake
+
+Maize:
+- N:P:K ratio 4:2:1.5
+- Apply 25% N at sowing, 50% at knee-high stage, 25% at tasseling
+
+Organic Fertilizers:
+- Farmyard manure: 10-15 tonnes per hectare
+- Compost: 5-10 tonnes per hectare
+- Green manure: Incorporate legume crops before flowering
+- Bio-fertilizers: Rhizobium, Azotobacter, PSB
+
+Best Practices:
+1. Always conduct soil test before fertilizer application
+2. Apply fertilizers when soil has adequate moisture
+3. Incorporate fertilizers into soil to reduce losses
+4. Avoid application during windy conditions
+5. Store fertilizers in dry, cool place
+6. Never mix different fertilizers unless recommended
+
+Timing of Application:
+- Basal: At the time of sowing/planting
+- Top dressing: During active growth period
+- Foliar: During reproductive stage for quick correction
+
+Signs of Over-fertilization:
+- Excessive vegetative growth
+- Delayed flowering/maturity
+- Increased pest and disease incidence
+- Salt burn on leaves
+
+For specific recommendations based on your soil test results and crop requirements, consult your local soil testing laboratory or agricultural extension office.
