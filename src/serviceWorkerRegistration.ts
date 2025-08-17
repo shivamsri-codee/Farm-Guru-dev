@@ -5,13 +5,20 @@ const isLocalhost = Boolean(
   window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
 );
 
+// Check if running in StackBlitz or similar iframe environment
+const isStackBlitz = Boolean(
+  window.parent !== window ||
+  window.location.hostname.includes('stackblitz') ||
+  window.location.hostname.includes('webcontainer')
+);
+
 type Config = {
   onSuccess?: (registration: ServiceWorkerRegistration) => void;
   onUpdate?: (registration: ServiceWorkerRegistration) => void;
 };
 
 export function register(config?: Config) {
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && !isStackBlitz) {
     window.addEventListener('load', () => {
       const swUrl = '/sw.js';
 
