@@ -2,43 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* FarmGuru Design System - Agricultural theme with earth tones and modern gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core background and text colors */
+    --background: 120 20% 98%;
+    --foreground: 120 10% 15%;
 
+    /* Card system with natural tones */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep forest green for agricultural feel */
+    --primary: 140 60% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 140 60% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm earth tone */
+    --secondary: 35 25% 88%;
+    --secondary-foreground: 120 10% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones for subtle elements */
+    --muted: 120 15% 93%;
+    --muted-foreground: 120 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Vibrant green for highlights */
+    --accent: 110 50% 60%;
+    --accent-foreground: 120 10% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success and warning states */
+    --success: 130 60% 50%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 45 90% 60%;
+    --warning-foreground: 45 15% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    /* Border and input styling */
+    --border: 120 20% 85%;
+    --input: 120 20% 95%;
+    --ring: 140 60% 35%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Border radius for consistent rounded corners */
+    --radius: 0.75rem;
+
+    /* Custom agricultural gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(35 60% 70%), hsl(45 70% 80%));
+    --gradient-forest: linear-gradient(135deg, hsl(140 60% 25%), hsl(110 50% 35%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 60% 85%), hsl(120 20% 90%));
+    --gradient-confidence-high: linear-gradient(90deg, hsl(130 60% 50%), hsl(110 50% 60%));
+    --gradient-confidence-medium: linear-gradient(90deg, hsl(45 90% 60%), hsl(35 80% 65%));
+    --gradient-confidence-low: linear-gradient(90deg, hsl(0 60% 65%), hsl(15 70% 70%));
+
+    /* Elegant shadows with agricultural theme */
+    --shadow-soft: 0 4px 20px -4px hsl(120 20% 70% / 0.3);
+    --shadow-medium: 0 8px 30px -6px hsl(140 30% 40% / 0.25);
+    --shadow-strong: 0 12px 40px -8px hsl(140 60% 25% / 0.3);
+    --shadow-glow: 0 0 30px hsl(110 50% 60% / 0.4);
+
+    /* Smooth transitions for interactions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Voice recording pulse animation */
+    --pulse-recording: 0 0 0 0 hsl(0 84% 60% / 0.7);
+
+    /* Sidebar colors for consistency */
+    --sidebar-background: 120 20% 96%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
@@ -100,6 +136,95 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Voice recording pulse animation */
+  .pulse-recording {
+    animation: pulse-recording 2s infinite;
+  }
+
+  @keyframes pulse-recording {
+    0% {
+      box-shadow: 0 0 0 0 hsl(0 84% 60% / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px hsl(0 84% 60% / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(0 84% 60% / 0);
+    }
+  }
+
+  /* Confidence bar animations */
+  .confidence-fill {
+    transition: width 1s ease-out;
+  }
+
+  /* Floating animation for decorative elements */
+  .float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Custom gradients as utilities */
+  .bg-gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .bg-gradient-forest {
+    background: var(--gradient-forest);
+  }
+
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .bg-gradient-confidence-high {
+    background: var(--gradient-confidence-high);
+  }
+
+  .bg-gradient-confidence-medium {
+    background: var(--gradient-confidence-medium);
+  }
+
+  .bg-gradient-confidence-low {
+    background: var(--gradient-confidence-low);
+  }
+
+  /* Custom shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-spring {
+    transition: var(--transition-spring);
   }
 }
