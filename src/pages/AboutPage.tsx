@@ -4,7 +4,7 @@ const AboutPage = () => {
       <h1>About FarmGuru</h1>
       <p>FarmGuru provides AI-powered agricultural assistance with a focus on safety, usability, and transparency. It supports English and Hindi, works offline for recent queries, and integrates with public data sources.</p>
 
-      <p className="text-sm text-muted-foreground">For a demo walkthrough, see the README’s Demo Script section.</p>
+      <p className="text-sm text-muted-foreground">For a demo walkthrough, see the README's Demo Script section.</p>
 
       <h2 id="sources">Data & Sources</h2>
       <ul>

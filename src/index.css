@@ -191,6 +191,18 @@
     background: var(--gradient-sky);
   }
 
+  /* Additional gradient utilities */
+  .bg-gradient-confidence-high {
+    background: var(--gradient-confidence-high);
+  }
+
+  .bg-gradient-confidence-medium {
+    background: var(--gradient-confidence-medium);
+  }
+
+  .bg-gradient-confidence-low {
+    background: var(--gradient-confidence-low);
+  }
   .bg-gradient-confidence-high {
     background: var(--gradient-confidence-high);
   }

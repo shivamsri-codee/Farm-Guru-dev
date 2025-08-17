@@ -75,7 +75,9 @@ export default {
 					forest: '#2a8f6d',
 					leaf: '#74c69d',
 					sun: '#f6a71d',
-				}
+				},
+				'gradient-forest': 'linear-gradient(135deg, #2a8f6d, #74c69d)',
+				'gradient-sky': 'linear-gradient(180deg, #f0f9ff, #f7fbf7)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

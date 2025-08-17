@@ -158,9 +158,9 @@ export const QueryInput = ({ onQuery, isLoading }: QueryInputProps) => {
       // Check for fallback response
       if (result.answer === "I don't know — please consult a local expert.") {
         // Show special help card
-        onQuery(queryText, undefined, { showHelpCard: true, result });
+        onQuery(queryText, imageId ? new File([], 'image') : undefined);
       } else {
-        onQuery(queryText, undefined, { result });
+        onQuery(queryText, imageId ? new File([], 'image') : undefined);
       }
     } catch (error) {
       console.error('Query error:', error);

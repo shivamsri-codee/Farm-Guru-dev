@@ -63,6 +63,27 @@ cp .env.example .env
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+### Hugging Face Setup (Alternative to OpenAI)
+
+1. **Get Hugging Face API key:**
+   - Visit [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+   - Create a new token with "Read" permissions
+
+2. **Add to backend/.env:**
+```bash
+HF_API_KEY=your_huggingface_token
+HF_MODEL=HuggingFaceH4/zephyr-7b-beta  # or any compatible model
+```
+
+3. **Test with curl:**
+```bash
+curl -X POST "http://localhost:8000/api/query" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "When should I water my wheat crop?", "lang": "en"}'
+```
+
+**Note:** If using a gated model, visit the model page on Hugging Face and accept the terms first.
+
 ### Supabase Setup
 
 1. **Create a new Supabase project** at [supabase.com](https://supabase.com)
@@ -194,6 +215,7 @@ CORS_ORIGINS=http://localhost:5173,http://localhost:3000
 ```bash
 # Backend works without OpenAI key using deterministic responses
 # For full functionality, add OPENAI_API_KEY to backend/.env
+# Or use Hugging Face: add HF_API_KEY to backend/.env
 ```
 
 **Supabase Connection:**
