@@ -229,3 +229,92 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - India Meteorological Department (IMD) for weather data
 - Ministry of Agriculture & Farmers Welfare for scheme information
 - Farmers across India for their valuable feedback and insights
+
+## ✨ New Multi-Page UI (React Router v6)
+
+- Home `/` – Hero with voice CTA, quick prompts
+- Query `/query` – Text/voice/image query with animated results and sources
+- Weather `/weather` – District/state forecasts with irrigation guidance
+- Market `/market` – Commodity search, 7-day sparkline and BUY/HOLD/SELL
+- Schemes `/schemes` – PM-KISAN/PMFBY matching and Apply links
+- Diagnostics `/diagnostics` – Image upload, stubbed results, safety warnings
+- Community `/community` – Feed, create post, comments, moderation hint
+- Profile `/profile` – Saved queries/alerts placeholders and language note
+- Admin `/admin` – Flagged queries with moderation actions (stub)
+- About `/about` – Data sources, accessibility, limitations and ethics
+
+### Design System
+- Palette: Forest `#2a8f6d` → Leaf `#74c69d` gradient, Accent Sun `#f6a71d`
+- Typography: Inter + Noto Sans Devanagari, mobile-first sizes
+- Cards: Glass effect with backdrop-blur, rounded-2xl, soft shadows
+- Animations: Framer Motion slide/fade + micro hover scale via `AnimatedCard`
+- Background: Subtle leaf gradients via `src/styles/backgrounds.css`
+
+### Accessibility
+- Keyboard focusable controls, visible focus styles
+- `aria-live` announcements for results/status
+- Alt text and SVG titles included
+
+## 🧩 How to Run Locally
+
+1. Install deps
+```bash
+npm install
+```
+2. Create `.env` in project root (optional but recommended)
+```bash
+VITE_API_URL=http://localhost:8000
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+```
+3. Start frontend
+```bash
+npm run dev
+```
+4. Start backend (separate terminal)
+```bash
+cd backend
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Notes:
+- Without `VITE_API_URL`, app runs in demo mode with deterministic fallbacks.
+- Without Supabase keys, image upload features show a dev-only banner and gracefully degrade.
+
+## 🎥 Updated Demo Script (30–60s)
+
+1. Home: show hero + voice CTA and quick prompts
+2. Query: type a question, submit, show animated ResultCard and sources
+3. Market: search "tomato", see sparkline and SELL/HOLD/BUY
+4. Schemes: choose state/crop, view at least one scheme and Apply link
+5. Diagnostics: upload `sample_leaf_1.jpg`, see progress and safe recommendation
+6. Community: create a post; show optimistic render
+7. PWA: install prompt and offline reload (last query appears)
+
+## 📸 Screenshots to Capture
+
+- Home hero + quick prompts
+- Query with results and sources
+- Market with sparkline and signal badge
+- Schemes with policy cards and Apply
+- Diagnostics with upload progress + warning
+
+## 🗺️ Files Added/Modified
+
+- Components: `Header`, `Footer`, `BottomTabs`, `HeroIllustration`, `AnimatedCard`, `Sparkline`
+- Pages: Home, Query, Weather, Market, Schemes, Diagnostics, Community, Profile, Admin, About
+- Routing: `src/routes.tsx`, wired in `src/App.tsx`
+- Styles: `src/styles/backgrounds.css`
+- Assets: `src/assets/hero-plant.svg`, `src/assets/bg-leaf-pattern.svg`
+- Misc: `src/lib/analytics.ts`
+
+## ✅ Acceptance Checklist
+
+- Header logo → Home; Bottom tabs work on mobile
+- Query calls backend at `/api/query` (with demo fallback)
+- Voice/image supported in QueryInput; aria-live announcements
+- Weather/Market/Schemes call respective endpoints with inputs
+- Diagnostics uses Supabase upload + chem recommendations fallback
+- Community supports creating posts with optimistic UI
+- Installable PWA; offline shows last cached query
+- Keyboard-only navigation reaches mic, input, submit, and sources

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Sparkline } from '@/utils/sparkline';
+import { Sparkline } from '@/components/Sparkline';
 
 interface MarketData {
   commodity: string;
@@ -27,7 +27,8 @@ export const MarketCard = ({ commodity, mandi }: MarketCardProps) => {
     const fetchMarket = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/api/market?commodity=${commodity}&mandi=${mandi}`);
+        const apiUrl = import.meta.env.VITE_API_URL || '';
+        const response = await fetch(`${apiUrl}/api/market?commodity=${commodity}&mandi=${mandi}`);
         const data = await response.json();
         setMarket(data);
       } catch (error) {

@@ -70,6 +70,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				brand: {
+					forest: '#2a8f6d',
+					leaf: '#74c69d',
+					sun: '#f6a71d',
 				}
 			},
 			borderRadius: {
