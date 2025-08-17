@@ -1,0 +1,22 @@
+/* Background imagery utilities for FarmGuru */
+.bg-leaf-top-right {
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	width: 320px;
+	height: 320px;
+	background: radial-gradient(closest-side, rgba(42,143,109,0.18), transparent 70%);
+	filter: blur(8px);
+	border-radius: 9999px;
+}
+
+.bg-leaf-bottom-left {
+	position: absolute;
+	bottom: -60px;
+	left: -60px;
+	width: 380px;
+	height: 380px;
+	background: radial-gradient(closest-side, rgba(116,198,157,0.2), transparent 70%);
+	filter: blur(10px);
+	border-radius: 9999px;
+}

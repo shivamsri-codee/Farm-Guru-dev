@@ -27,7 +27,8 @@ export const WeatherCard = ({ state, district }: WeatherCardProps) => {
     const fetchWeather = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/api/weather?state=${state}&district=${district}`);
+        const apiUrl = import.meta.env.VITE_API_URL || '';
+        const response = await fetch(`${apiUrl}/api/weather?state=${state}&district=${district}`);
         const data = await response.json();
         setWeather(data);
       } catch (error) {
