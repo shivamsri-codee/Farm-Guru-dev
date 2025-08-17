@@ -9,7 +9,7 @@ const AboutPage = () => {
       <h2 id="sources">Data & Sources</h2>
       <ul>
         <li><a href="https://mausam.imd.gov.in" target="_blank" rel="noopener noreferrer">India Meteorological Department</a> – weather forecasts and advisories</li>
-        <li><a href="https://pmkisan.gov.in" target="_blank" rel="noopener noreferrer">PM-KISAN</a> and <a href="https://pmfby.gov.in" target="_blank" rel="noopener noreferrer">PMFBY</a> – government schemes</li>
+        <li><a href="https://pmkisan.gov.in" target="_blank" rel="noopener noreferrer">PM-KISAN</a> and <a href="https://pmfby.gov.in" target=\"_blank" rel="noopener noreferrer">PMFBY</a> – government schemes</li>
         <li>Market data – state mandi feeds where available, with 7-day aggregates</li>
       </ul>
 
